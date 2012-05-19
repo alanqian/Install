@@ -1,0 +1,75 @@
+[Desktop Entry]
+Version=1.0
+Name=Google Services
+Exec=xdg-open https://accounts.google.com/
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=chrome-https___docs.google.com_
+Categories=Network;WebBrowser;
+StartupNotify=true
+StartupWMClass=docs.google.com
+
+X-Ayatana-Desktop-Shortcuts=Plus;Inbox;Compose;Voice;Contacts;Calendar;Documents;Photos;Maps;Sites;Reader;Bookmarks
+Name[en_US]=Google Services (Gmail)
+
+[Plus Shortcut Group]
+Name=Plus
+Exec=xdg-open 'https://plus.google.com/u/0/'
+TargetEnvironment=Unity
+
+[Inbox Shortcut Group]
+Name=InBox
+Exec=xdg-open 'https://mail.google.com/mail/u/0/?shva=1#inbox'
+TargetEnvironment=Unity
+
+[Compose Shortcut Group]
+Name=Compose
+Exec=xdg-open 'https://mail.google.com/mail/?shva=1#compose'
+TargetEnvironment=Unity
+
+[Voice Shortcut Group]
+Name=Voice
+Exec=xdg-open 'https://www.google.com/voice/b/0?pli=1#inbox'
+TargetEnvironment=Unity
+
+[Contacts Shortcut Group]
+Name=Contacts
+Exec=xdg-open 'https://www.google.com/contacts'
+TargetEnvironment=Unity
+
+[Calendar Shortcut Group]
+Name=Calendar
+Exec=xdg-open 'https://calendar.google.com'
+TargetEnvironment=Unity
+
+[Documents Shortcut Group]
+Name=Documents
+Exec=xdg-open https://docs.google.com/
+TargetEnvironment=Unity
+
+[Photos Shortcut Group]
+Name=Photos
+Exec=xdg-open 'https://plus.google.com/u/0/photos'
+TargetEnvironment=Unity
+
+[Maps Shortcut Group]
+Name=Maps
+Exec=xdg-open 'http://maps.google.com/maps?hl=en&tab=ml'
+TargetEnvironment=Unity
+
+[Sites Shortcut Group]
+Name=Sites
+Exec=xdg-open 'https://sites.google.com/?tab=m3&pli=1'
+TargetEnvironment=Unity
+
+[Reader Shortcut Group]
+Name=Reader
+Exec=xdg-open 'https://www.google.com/reader/view/?hl=en&tab=my'
+TargetEnvironment=Unity
+
+[Bookmarks Shortcut Group]
+Name=Bookmarks
+Exec=xdg-open 'https://www.google.com/bookmarks/l'
+TargetEnvironment=Unity
+

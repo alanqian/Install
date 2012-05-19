@@ -1,0 +1,42 @@
+[Desktop Entry]
+Name=Home Folder
+Comment=Open your personal folder
+Exec=nautilus
+Icon=user-home
+Terminal=false
+StartupNotify=true
+Type=Application
+OnlyShowIn=GNOME;Unity;
+Categories=GNOME;GTK;Core;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=nautilus
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Version=3.0.0
+X-Ubuntu-Gettext-Domain=nautilus
+X-Ayatana-Desktop-Shortcuts=Documents;Downloads;Music;Pictures;Videos
+
+[Documents Shortcut Group]
+Name=Documents
+Exec=nautilus Documents
+TargetEnvironment=Unity
+
+[Downloads Shortcut Group]
+Name=Downloads
+Exec=nautilus Downloads
+TargetEnvironment=Unity
+
+[Music Shortcut Group]
+Name=Music
+Exec=nautilus Music
+TargetEnvironment=Unity
+
+[Pictures Shortcut Group]
+Name=Pictures
+Exec=nautilus Pictures
+TargetEnvironment=Unity
+
+[Videos Shortcut Group]
+Name=Videos
+Exec=nautilus Videos
+TargetEnvironment=Unity
+

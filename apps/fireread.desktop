@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Name=Fire Web Read
+Comment=Read the Web
+GenericName=Web Reader
+Exec=firefox --no-remote -P read %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=fireread
+Categories=GNOME;GTK;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;
+StartupWMClass=Firefox
+StartupNotify=true
+X-Ayatana-Desktop-Shortcuts=NewWindow;
+
+[NewWindow Shortcut Group]
+Name=Open a New Window
+Exec=firefox -new-window 
+TargetEnvironment=Unity

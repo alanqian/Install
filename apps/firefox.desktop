@@ -1,0 +1,28 @@
+[Desktop Entry]
+Version=1.0
+Name=Firefox Web Browser
+Name[zh_CN]=Firefox 网络浏览器
+Name[zh_TW]=Firefox 網路瀏覽器
+Comment=Browse the World Wide Web
+Comment[zh_CN]=浏览互联网
+Comment[zh_TW]=瀏覽網際網路
+GenericName=Web Browser
+GenericName[zh_CN]=网络浏览器
+GenericName[zh_TW]=網路瀏覽器
+Exec=firefox %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=firefox
+Categories=GNOME;GTK;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;
+StartupWMClass=Firefox
+StartupNotify=true
+X-Ayatana-Desktop-Shortcuts=NewWindow;
+
+[NewWindow Shortcut Group]
+Name=Open a New Window
+Name[zh_CN]=新建窗口
+Name[zh_TW]=開啟新視窗
+Exec=firefox -new-window
+TargetEnvironment=Unity
