@@ -1,0 +1,97 @@
+menuentry "XXXX LiveCD On D:" {
+    loopback lo1 (hd0,2)/a.iso
+    insmod ntfs
+    linux (lo1)/casper/vmlinuz boot=casper iso-san/filename=/a.iso noeject noprompt --
+    initrd (lo1)/casper/initrd.lz
+}
+
+menuentry "ISO - Xubuntu 10.10 64" {
+    set isofile="/boot/iso/xubuntu-10.10-desktop-amd64.iso"
+    loopback loop (hd0,msdos5)$isofile
+    linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile
+    nomodeset
+    initrd (loop)/casper/initrd.lz
+}
+
+# In Ubuntu you can put the menuentries you want last in the file
+# /etc/grub.d/40_custom and not having to restore them each time you want them. This
+# is for more permanent use, but you can remove them as easily by removing them (or
+# commenting out by putting a # first on the line) from the same file and running ‘
+# sudo update-grub’ again.
+#
+# /dev/hda1 等同 (hd0,0)
+# /dev/hda2 等同 (hd0,1) 注：看好了，这个是扩展分区，在Linux还是Windows是不能挂载的；
+# /dev/hda5 等同 (hd0,4)
+# /dev/hda6 等同 (hd0,5)
+# /dev/hda7 等同 (hd0,6)
+# /dev/hda8 等同 (hd0,7)
+
+
+menuentry "Lucid ISO" {
+    set isofile="/boot/iso/ubuntu-10.04-desktop-i386.iso"
+    loopback loop (hd0,1)$isofile
+    linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+    initrd (loop)/casper/initrd.lz
+}
+
+#!/bin/sh
+echo "Adding 40_custom." >&2
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries. Simply type the
+# menu entries you want to add after this comment. Be careful not to change
+# the 'exec tail' line above.
+
+menuentry "Lucid ISO" {
+    loopback loop (hd0,1)/boot/iso/ubuntu-10.04-desktop-i386.iso
+    linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=/boot/iso/ubuntu-10.04-desktop-i386.iso noprompt noeject
+    initrd (loop)/casper/initrd.lz
+}
+
+menuentry "Karmic 64-bit ISO" {
+    loopback loop (hd0,1)/boot/iso/ubuntu-9.10-desktop-amd64.iso
+    linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=/boot/iso/ubuntu-9.10-desktop-amd64.iso noprompt quiet splash
+    initrd (loop)/casper/initrd.lz
+}
+
+menuentry "Gparted Live ISO" {
+    set isofile="/boot/iso/gparted-live-0.8.0-1.iso"
+    loopback loop (hd0,1)$isofile
+    linux (loop)/live/vmlinuz boot=live config union=aufs noswap noprompt ip=frommedia findiso=$isofile toram=filesystem.squashfs
+    initrd (loop)/live/initrd.img
+} 
+
+menuentry "SystemRescue CD ISO" {
+set isofile="/boot/iso/systemrescuecd-x86-1.5.8.iso"
+loopback loop (hd0,1)$isofile
+linux (loop)/isolinux/rescue64 setkmap=us isoloop=/systemrescuecd-x86-1.5.8.iso
+initrd (loop)/isolinux/initram.igz
+}
+
+menuentry "Parted Magic ISO" {
+    set isofile="/boot/iso/pmagic-5.2.iso"
+    loopback loop (hd0,1)$isofile
+    linux (loop)/pmagic/bzImage iso_filename=$isofile boot=live load_ramdisk=1 prompt_ramdisk=0 noeject noprompt 
+    initrd (loop)/pmagic/initramfs
+}
+
+menuentry "Boot IMG - Seagate Tools" {
+    linux16 /memdisk bigraw
+    initrd16 /SeaTools.img
+}
+
+Courtesy of cbowman57 in Post #54; with Clonezilla ISO located in sda9's root directory (/)
+menuentry "Clonezilla live" {
+    set isofile="(hd0,9)/clonezilla-live-1.2.8-3-amd64.iso"
+    loopback loop $isofile
+    linux (loop)/live/vmlinuz boot=live live-config noswap nolocales edd=on nomodeset ocs_live_run=\"ocs-live-general\" ocs_live_extra_param=\"\" ocs_live_keymap=\"\" ocs_live_batch=\"no\" ocs_lang=\"\" vga=788 ip=frommedia nosplash toram=filesystem.squashfs findiso=$isofile
+    initrd (loop)/live/initrd.img
+}
+
+Modified from the post by Dancer_69
+menuentry "Gentoo 11 Live DVD" {
+    set isofile="/boot/iso/gentoo-livedvd-x86-amd64-32ul-11.0.iso"
+    loopback loop (hd1,6)$isofile
+    linux (loop)/boot/gentoo root=/dev/ram0 init=/linuxrc dokeymap looptype=squashfs loop=/image.squashfs cdroot initrd=/boot/gentoo.igz isoboot=/boot/iso/gentoo-livedvd-x86-amd64-32ul-11.0.iso
+    initrd (loop)/boot/gentoo.igz
+}
+

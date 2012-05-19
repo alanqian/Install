@@ -1,0 +1,8 @@
+menuentry "ISO - Ubuntu 11.04 64" {
+    set isofile="/ubuntu-11.04-desktop-amd64.iso"
+    insmod ext2
+    loopback loop (hd0,8)$isofile
+    linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile
+    initrd (loop)/casper/initrd.lz
+}
+
