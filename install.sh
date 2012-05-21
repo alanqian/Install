@@ -62,7 +62,7 @@ sudo apt-get -y install libicu-dev
 sudo apt-get -y install rar unrar p7zip
 
 sudo apt-get -y install build-essential autoconf automake
-sudo apt-get -y install clang flex bison
+sudo apt-get -y install clang flex bison gccxml
 sudo apt-get -y install cvs subversion git
 sudo apt-get -y install regexxer sqlitebrowser sqlite3 bluefish tidy
 sudo apt-get -y install astyle indent
