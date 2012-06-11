@@ -69,7 +69,7 @@ sudo apt-get -y install astyle indent
 sudo apt-get -y install eclipse-cdt eclipse-jdt eclipse-egit 
 sudo apt-get -y install perl-doc perltidy
 sudo apt-get -y install libyaml-perl
-sudo apt-get -y install python-docutils rest2web
+sudo apt-get -y install python-pip python-docutils rest2web
 sudo apt-get -y install doxygen doxygen-doc
 sudo apt-get -y install manpages-posix manpages-posix-dev
 sudo apt-get -y install valgrind
@@ -78,6 +78,7 @@ sudo apt-get -y install lcov
 # ssh/curl
 sudo apt-get -y install ssh
 sudo apt-get -y install curl
+sudo pip install -U https://github.com/jkbr/httpie/tarball/master
 
 # install lunar calendar applet
 sudo apt-get -y install lunar-applet	
